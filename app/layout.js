@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Homemade Hub - Buy & Sell Food',
   description: 'A platform for buying and selling homemade food',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
 }
 
 export default function RootLayout({ children }) {

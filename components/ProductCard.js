@@ -83,15 +83,15 @@ export default function ProductCard({ product }) {
         
         {/* Pricing Information */}
         <div className="mb-4 bg-gray-50 rounded-lg p-3">
-          <div className="flex items-center justify-between text-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between text-sm gap-1">
             <span className="text-gray-600">Seller Receives:</span>
             <span className="font-medium text-green-600">PKR {product.sellerPrice?.toFixed(2) || product.price.toFixed(2)}</span>
           </div>
-          <div className="flex items-center justify-between text-sm mt-1">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between text-sm mt-1 gap-1">
             <span className="text-gray-600">Admin Commission:</span>
             <span className="font-medium text-blue-600">PKR {(product.adminCommission || adminCommission).toFixed(2)}</span>
           </div>
-          <div className="flex items-center justify-between text-base font-bold mt-2 pt-2 border-t border-gray-200">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between text-base font-bold mt-2 pt-2 border-t border-gray-200 gap-1">
             <span>Final Price:</span>
             <span className="text-orange-600">PKR {(product.finalPrice || finalPrice).toFixed(2)}</span>
           </div>

@@ -247,7 +247,7 @@ export default function LocationSelector({ onLocationSelect, initialLocation = n
         
         <div 
           ref={mapRef} 
-          className={`w-full ${loading || error ? 'h-0' : 'h-96'} transition-all duration-300`}
+          className={`w-full ${loading || error ? 'h-0' : 'h-64 sm:h-96'} transition-all duration-300`}
         />
       </div>
 

@@ -26,6 +26,9 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
 }
 
 /* Custom Styles */
@@ -151,6 +154,29 @@ input:focus, select:focus, textarea:focus {
   
   .mobile-full-width {
     width: 100%;
+  }
+  
+  /* Improve touch targets on mobile */
+  button, a, input, select {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better spacing on mobile */
+  .p-4 {
+    padding: 1rem;
+  }
+  
+  .p-6 {
+    padding: 1rem;
+  }
+  
+  .gap-6 {
+    gap: 1rem;
+  }
+  
+  .gap-8 {
+    gap: 1.5rem;
   }
 }
 
@@ -291,4 +317,68 @@ input::placeholder, select::placeholder, textarea::placeholder {
   input::placeholder, select::placeholder, textarea::placeholder {
     color: #9CA3AF; /* gray-400 */
   }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Prevent horizontal scrolling */
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Better form controls on mobile */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Improve readability on small screens */
+  .text-base {
+    font-size: 0.9rem;
+  }
+  
+  .text-lg {
+    font-size: 1.05rem;
+  }
+  
+  .text-xl {
+    font-size: 1.2rem;
+  }
+  
+  /* Better touch targets */
+  .touch-target {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  /* Reduce padding on very small screens */
+  .p-8 {
+    padding: 1.25rem;
+  }
+  
+  .px-8 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  
+  .py-8 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent overscroll bounce on mobile Safari */
+body {
+  overscroll-behavior: none;
 }

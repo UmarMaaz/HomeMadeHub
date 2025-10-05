@@ -119,8 +119,8 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-gradient-to-r from-orange-600 to-amber-600 bg-opacity-95">
-          <div className="px-4 pt-4 pb-6 space-y-2">
+        <div className="md:hidden bg-gradient-to-r from-orange-600 to-amber-600 bg-opacity-95 absolute top-full left-0 right-0 z-50 shadow-lg">
+          <div className="px-4 pt-4 pb-6 space-y-2 max-h-[calc(100vh-80px)] overflow-y-auto">
             {navLinks.map((link) => {
               const Icon = link.icon;
               
@@ -135,8 +135,8 @@ export default function Navbar() {
                   } block flex items-center space-x-3 text-base font-medium transition-all duration-300`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <Icon className="h-6 w-6" />
-                  <span>{link.name}</span>
+                  <Icon className="h-6 w-6 flex-shrink-0" />
+                  <span className="truncate">{link.name}</span>
                 </Link>
               );
             })}
@@ -148,7 +148,7 @@ export default function Navbar() {
                 }}
                 className="w-full text-left px-4 py-3 rounded-xl hover:bg-white hover:bg-opacity-10 text-base font-medium flex items-center space-x-3"
               >
-                <User className="h-6 w-6" />
+                <User className="h-6 w-6 flex-shrink-0" />
                 <span>Logout</span>
               </button>
             )}
